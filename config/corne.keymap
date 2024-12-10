@@ -37,22 +37,15 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
+    combos { compatible = "zmk,combos"; };
 
-        minus {
-            bindings = <&kp MINUS>;
-            key-positions = <4 7>;
-        };
+    macros {
+        change_space: change_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp NUMBER_1>, <&macro_tap>;
 
-        underscore {
-            bindings = <&kp UNDER>;
-            key-positions = <28 31>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <17 18>;
+            label = "CHANGE_SPACE";
         };
     };
 
@@ -82,10 +75,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB           &kp N1  &kp N2  &kp N3    &trans  &trans       &trans      &trans      &trans      &trans         &trans  &kp BSPC
-&kp LEFT_CONTROL  &kp N4  &kp N5  &kp N6    &trans  &trans       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT      &trans  &trans
-&kp LSHFT         &kp N7  &kp N8  &kp N9    &kp N0  &trans       &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &bt BT_DISC 2  &trans  &trans
-                                  &kp LGUI  &trans  &kp SPACE    &kp RET     &trans      &kp RALT
+&kp TAB           &kp N1  &kp N2  &kp N3    &trans  &trans       &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans         &trans  &kp BSPC
+&kp LEFT_CONTROL  &kp N4  &kp N5  &kp N6    &trans  &trans       &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT      &trans  &trans
+&kp LSHFT         &kp N7  &kp N8  &kp N9    &kp N0  &trans       &bt BT_PRV  &bt BT_NXT         &bt BT_CLR       &bt BT_DISC 2  &trans  &trans
+                                  &kp LGUI  &trans  &kp SPACE    &kp RET     &trans             &kp RALT
             >;
         };
 
@@ -97,10 +90,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp TAB    &kp EXCL                           &kp AT                             &kp HASH                           &kp DLLR                           &kp PRCNT                &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &mt LC(NUMBER_1) LA(LS(NUMBER_1))  &mt LC(NUMBER_2) LS(LA(NUMBER_2))  &mt LC(NUMBER_3) LS(LA(NUMBER_3))  &mt LC(NUMBER_4) LS(LA(NUMBER_4))  &mt LC(N5) LS(LA(N5))    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &mt LC(NUMBER_6) LS(LA(NUMBER_6))  &mt LC(N7) LS(LA(N7))              &mt LC(N8) LS(LA(N8))              &mt LC(N9) LS(LA(N9))              &kp LA(LS(M))            &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                                                                                 &kp LGUI                           &trans                             &kp SPACE                &kp RET    &trans     &kp RALT
             >;
         };
     };
