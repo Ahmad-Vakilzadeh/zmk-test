@@ -6,13 +6,10 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
 
-
-&led_strip {
-    chain-length = <27>;
-};
+&led_strip { chain-length = <27>; };
 
 / {
     behaviors {
@@ -101,6 +98,24 @@
 &kp LSHFT  &mt LS(LA(NUMBER_6)) LC(NUMBER_6)  &mt LS(LA(N7)) LC(N7)              &mt LS(LA(LC(N8))) LC(N8)          &mt LS(LA(N9)) LC(N9)              &kp LA(LS(M))            &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
                                                                                  &kp LGUI                           &trans                             &kp SPACE                &kp RET    &trans     &kp RALT
             >;
+        };
+
+        both {
+            bindings = <
+&trans  &ext_power EP_TOG  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans             &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans             &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &ext_power EP_TOG
+                                   &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        third {
+            if-layers = <0 2>;
+            then-layer = <3>;
         };
     };
 };
