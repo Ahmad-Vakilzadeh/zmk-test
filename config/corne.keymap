@@ -102,10 +102,10 @@
 
         both {
             bindings = <
-&ext_power EP_OFF  &ext_power EP_ON  &studio_unlock  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans             &trans            &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans             &trans            &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                                     &trans  &trans  &trans    &trans  &trans  &trans
+&ext_power EP_OFF  &ext_power EP_ON  &trans  &trans  &trans  &trans    &trans  &kp LC(F8)  &trans  &trans  &trans  &trans
+&trans             &trans            &trans  &trans  &trans  &trans    &trans  &trans      &trans  &trans  &trans  &trans
+&trans             &trans            &trans  &trans  &trans  &trans    &trans  &trans      &trans  &trans  &trans  &trans
+                                             &trans  &trans  &trans    &trans  &trans      &trans
             >;
         };
     };
