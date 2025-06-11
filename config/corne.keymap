@@ -114,7 +114,7 @@
         compatible = "zmk,conditional-layers";
 
         third {
-            if-layers = <0 2>;
+            if-layers = <2 1>;
             then-layer = <3>;
         };
     };
