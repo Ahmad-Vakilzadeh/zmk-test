@@ -21,17 +21,6 @@
 };
 
 
-/ {
-    backlight: backlight {
-        compatible = "zmk,backlight-pwm";
-        pwms = <&pwm0 0 PWM_MSEC(1) PWM_POLARITY_NORMAL>;
-        brightness = <100>;
-    };
-
-    chosen {
-        zmk,backlight = &backlight;
-    };
-};
 
 / {
     backlight: pwmleds {
